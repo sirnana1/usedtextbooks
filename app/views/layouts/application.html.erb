@@ -1,15 +1,27 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Usedtextbooks</title>
+    <title><%= full_title(yield(:title)) %></title> <!-- Title of the page -->
+
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
-
   <body>
+    <%= render'layouts/header' %>
+
+      <div class= "container">
+        <!-- Displays alert and  errors messages -->
+        <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
+
+    </div>
   </body>
 </html>
