@@ -1,44 +1,56 @@
 
+<br>
+<div class="jumbotron">
+<div class="row">
+  <div class="col-sm-6">
 
-<p>
+  </div>
+  <div class="col-sm-4">
+<ul>
+<li>
   <strong>Title:</strong>
   <%= @book.title %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Author:</strong>
   <%= @book.author %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Description:</strong>
   <%= @book.description %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Publisher:</strong>
   <%= @book.publisher %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Isbn:</strong>
   <%= @book.isbn %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Ed:</strong>
   <%= @book.ed %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Year:</strong>
   <%= @book.year %>
-</p>
+</li>
 
-<p>
+<li>
   <strong>Price:</strong>
   <%= @book.price %>
-</p>
+</li>
+
 <br>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
+</ul>
+</div>
+</div>
+</div>

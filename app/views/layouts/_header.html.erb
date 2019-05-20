@@ -4,42 +4,116 @@
 
      The the header with the navigation bar.
 -->
-
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse js-navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <a class="navbar-brand" href="#">
+          <%= link_to "USED TEXTBOOKS", root_path, id: "logo" %>
+        </a>
+        <!-- <li> <a href="#">Store locator</a> </li> -->
+      </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <!-- Home -->
         <li>
-              <i class="glyphicon glyphicon-home"></i>
-              Home
-            </li>
+          <i class="glyphicon glyphicon-home"></i>
+          Home
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Account<b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
+      </li>
 
-            <li class="divider"></li>
-            <li>
+      <!-- Users -->
 
-            </li>
-          </ul>
-        </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Manage <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
+        <li>
+          <i class="fa fa-users"></i>
+          Users
+          <span class="badge ">
+            
+          </span>
 
-          </ul>
-        </li>
-          <i class="glyphicon glyphicon-log-out"></i>
-          Log In
-      </ul>
+      </li>
+
+      <!-- Cart -->
+      <li>
+        My Cart
+        <span class="badge ">
+          <i class="fa fa-cart-plus" style="color:#FFD700; font-size:20px"></i>
+        </span>
+    </li>
+
+    <!-- Orders -->
+    <li>
+      My Orders
+      <span class="badge ">
+          <i class="fa fa-shopping-basket" style="color:#FFD700; font-size:20px"></i>
+
+      </span>
+  </li>
+
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+      Account
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <div class="navbar-content">
+          <div class="row">
+            <div class="col-md-5">
+              <!-- <img src="http://placehold.it/120x120" alt="Alternate Text" class="img-responsive"/> -->
+
+              <p class="text-center small">
+
+                <i class="glyphicon glyphicon-picture"></i>
+                Change Photo
+            </p>
+          </div>
+          <div class="col-md-7">
+            <span></span>
+            <p class="text-muted small">
+              </p>
+            <div class="divider"></div>
+
+            <i class="glyphicon glyphicon-eye-open"></i>
+            View Profile
+
+        </div>
+      </div>
+    </div>
+    <div class="navbar-footer">
+      <div class="navbar-footer-content">
+        <div class="row">
+          <div class="col-md-6">
+
+            <i class="glyphicon glyphicon-cog"></i>
+            Change Password
+
+        </div>
+        <div class="col-md-6">
+
+          <i class="glyphicon glyphicon-off"></i>
+          Sign out
+
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+</ul>
+</li>
+
+<!-- Log In -->
+<li>
+<i class="glyphicon glyphicon-log-out"></i>
+Log In
+
+</li>
+
+</ul>
 
   </div>
-
+  </div>
 </header>
