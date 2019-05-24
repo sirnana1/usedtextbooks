@@ -19,6 +19,13 @@
     <%= form.text_field :title %>
   </div>
 
+
+  <div class="form-group">
+    <%= form.label :subject  %>
+    <%= form.text_field :subject %>
+  </div>
+
+
   <div class="form-group">
     <%= form.label :author %>
     <%= form.text_field :author %>
@@ -40,18 +47,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :ed %>
-    <%= form.text_field :ed,placeholder: "eg.2" %>
-  </div>
-
-  <div class="form-group">
     <%= form.label :year %>
     <%= form.number_field :year, placeholder: "eg.2000" %>
   </div>
 
   <div class="form-group">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, placeholder: "no -1" %>
   </div>
 
   <div class="actions">
