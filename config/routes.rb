@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'registrations'
+  }
   get 'subjects/create'
   get 'subjects/index'
   get 'subjects/new'

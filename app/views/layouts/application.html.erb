@@ -3,6 +3,11 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title> <!-- Title of the page -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+
+  <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
@@ -16,9 +21,9 @@
 
       <div class= "container">
         <!-- Displays alert and  errors messages -->
-        <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
+
+
+      <%= render 'layouts/alerts'%>
     <%= yield %>
     <%= render 'layouts/footer' %>
 
