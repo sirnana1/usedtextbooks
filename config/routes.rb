@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: 'registrations'
-  }
-  get 'subjects/create'
-  get 'subjects/index'
-  get 'subjects/new'
-  get 'subjects/update'
-  get 'subjects/show'
-  get 'subjects/destroy'
+  devise_for :users 
+
   root 'books#index'
   get 'pages/about'
   get 'pages/contact'
