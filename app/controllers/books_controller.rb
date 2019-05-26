@@ -6,7 +6,9 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all.order("title")
+    #coalculates the number of pages and displays onl
+    @books = Book.paginate(page: params[:page], per_page: 12).order("title")
+
   end
 
   # GET /books/1
@@ -78,7 +80,7 @@ class BooksController < ApplicationController
 
    def check_user
      if current_user != @book.user
-       redirect_to root_url, notice: " Sorry you do not have the right privileges. "
+       redirect_to root_url, alert: " Sorry you do not have the right privileges. "
    end
  end
 end

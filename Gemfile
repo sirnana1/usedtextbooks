@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'pg', group: :production
 gem 'bootstrap-sass', '~>3.4.1'
-gem 'will_paginate','3.1.5'
+#gem 'will_paginate','3.1.5'
 #12 factor for Heroku
 gem 'rails_12factor',group: :production
 # Use CoffeeScript for .coffee assets and views
@@ -31,7 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 #gem 'bcrypt', '~> 3.1.7'
-
+#gem 'kaminari'
+gem 'fagaro'
+gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 # Use ActiveStorage variant
  gem 'mini_magick', '~> 4.8'
  gem 'simple_form', '~> 4.1'
