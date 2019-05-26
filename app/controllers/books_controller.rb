@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
@@ -73,4 +75,10 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :subject,:author, :description, :publisher, :isbn, :year, :price)
     end
+
+   def check_user
+     if current_user != @book.user
+       redirect_to root_url, notice: " Sorry you do not have the right privileges. "
+   end
+ end
 end
