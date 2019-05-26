@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-#belongs_to :user
+belongs_to :user
 
   # All these fields needs to be filled out by user or error message
   validates :title, presence: true

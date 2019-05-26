@@ -1,40 +1,30 @@
-<% provide(:title, "Book Listings") %>
-<h1>Books Listings</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subject</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th>Publisher</th>
-      <th>Isbn</th>
-      <th>Year</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+<% provide(:title, "Book Listings") %>
+<h1>Book Listings</h1>
+<hr/>
+<div class="row">
     <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.subject%></td>
-        <td><%= book.author %></td>
-        <td><%= book.publisher %></td>
-        <td><%= book.description %></td>
-        <td><%= book.isbn %></td>
-        <td><%= book.year %></td>
-        <td><%= book.price %></td>
-        <td><%= link_to 'Show', book, class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_book_path(book), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' },
-          class: "btn btn-link"%></td>
-      </tr>
+      <div class="col-md-3">
+
+        <%=image_tag 'http://placehold.it/150x250', class: 'thumbnail'%>
+        <div class="caption">
+          <h3><%=book.title %></h3>
+        <p><%= number_to_currency(book.price) %></p>
+        <p><%= book.user.name%></p>
+        <%= link_to 'Show', book, class: "btn btn-link" %>
+        <%= link_to 'Edit', edit_book_path(book), class: "btn btn-link" %>
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' },
+          class: "btn btn-link"%>
+          </div>
+          </div>
     <% end %>
-  </tbody>
-</table>
+
+  </div>
 
 <br>
 
 <%= link_to 'New Book', new_book_path %>
+
+<br>
+<br>

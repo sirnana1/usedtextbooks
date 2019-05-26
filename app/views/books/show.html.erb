@@ -1,46 +1,68 @@
-
-<div class="jumbotron">
-  <div class="row">
-    <div class="col-sm-6">
-
+<br>
+  <div class="row no-gutters">
+    <div class="col-md-5">
+      <%=image_tag 'http://placehold.it/350x400', class: 'thumbnail'%>
     </div>
-    <div class="col-sm-6">
-      <ul>
-        <li>
-          <strong>Title:</strong>
-          <%= @book.title %>
-        </li>
-        <li>
-          <strong>Subject:</strong>
-          <%= @book.subject%>
-        </li>
-        <li>
-          <strong>Author:</strong>
-          <%= @book.author %>
-        </li>
-        <li>
-          <strong>Description:</strong>
-          <%= @book.description %>
-        </li>
-        <li>
-          <strong>Publisher:</strong>
-          <%= @book.publisher %>
-        </li>
-        <li><strong>Isbn:</strong>
-          <%= @book.isbn %>
-        </li>
-        <li>
-          <strong>Year:</strong>
-          <%= @book.year %>
-        </li>
-        <li>
-          <strong>Price:</strong>
-          <%= @book.price %>
-        </li>
-        <br>
-        <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-link"%> |
-        <%= link_to 'Back', books_path,class: "btn btn-link" %>
-      </ul>
-    </div>
-   </div>
-</div>
+    <div class="col-md-4">
+      <table class="table table-striped">
+ <tbody>
+
+   <tr>
+     <th scope="row"> <strong>Title:</strong></th>
+
+     <td><%= @book.title %></td>
+   </tr>
+      <tr>
+            <th scope="row"> <strong>Subject:</strong>
+            </th>
+              <td> <%= @book.subject%></td>
+            </tr>
+
+            <tr>
+              <th scope="row"><strong>Author:</strong>
+            </th>
+              <td> <%= @book.author %></td>
+            </tr>
+
+            <tr>
+              <th scope="row"><strong>Description:</strong>
+            </th>
+              <td> <%= @book.description %></td>
+            </tr>
+            <tr>
+              <th scope="row"><strong>Publisher:</strong>
+            </th>
+              <td> <%= @book.publisher %></td>
+            </tr>
+            <tr>
+              <th scope="row"><strong>Publisher:</strong>
+            </th>
+              <td> <%= @book.publisher %></td>
+            </tr><tr>
+              <th scope="row"><strong>Isbn:</strong>
+            </th>
+              <td> <%= @book.isbn %></td>
+            </tr>
+            <tr>
+              <th scope="row"><strong>Year:</strong>
+            </th>
+              <td> <%= @book.year %></td>
+            </tr>
+            <tr>
+              <th scope="row"><strong>Price:</strong>
+            </th>
+              <td> <%= number_to_currency(@book.price) %></td>
+            </tr>
+          </tbody>
+
+  </table>
+          <br>
+          <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-link"%> |
+          <span>
+          </span>
+          
+          <%= link_to 'Back', books_path,class: "btn btn-link" %>
+      </div>
+
+
+  </div>
