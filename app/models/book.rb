@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
-
+  has_many :orders
 
 
   # All these fields needs to be filled out by user or error message

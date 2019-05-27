@@ -1,9 +1,9 @@
-<br>
+<h1>Book Informatiom</h1>
   <div class="row no-gutters">
     <div class="col-md-5">
       <%=image_tag 'http://placehold.it/350x400', class: 'thumbnail'%>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-7">
       <table class="table table-striped">
  <tbody>
 
@@ -57,16 +57,21 @@
 
   </table>
           <br>
+          <p>
           <!-- check if the current user is the one who made the posting-->
            <% if current_user == @book.user%>
-          <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-link"%> |
-          <% link_to 'Destroy', @books, method: :delete, data: {confirm: 'Are you sure?'},
-             class: "btn-btn-link"%>
+           <%=link_to 'Destroy', book_path, method: :delete, data: {confirm: 'Are you sure?'},
+           class: "btn-btn-primary" %>
+
+          <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-primary"%>
+
               <%end%>
-          <%= link_to 'Back', books_path,class: "btn btn-link" %>
 
-
+          <%= link_to 'Back', books_path,class: "btn btn-primary" %>
+           <% if current_user != @book.user %>
+          <%= link_to 'Buy It Now', new_book_order_path(@book),class: "btn btn-primary" %>
+          <%end%>
+          </p>
       </div>
-
 
   </div>

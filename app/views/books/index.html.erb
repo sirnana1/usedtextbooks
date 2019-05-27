@@ -11,8 +11,7 @@
               <h5><%=link_to book.title ,book %></h5>
             <%=(number_to_currency(book.price)) %>
             <p><%= "Sold by #{book.user.name}"%></p>
-            <%= link_to 'buy now',book,
-              class: "btn btn-primary"%>
+            <%= link_to 'buy now', new_book_order_path(book.id), class: "btn btn-primary"%>
               <hr>
               <br>
               </div>

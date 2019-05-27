@@ -8,8 +8,8 @@ class BooksController < ApplicationController
 
 
   def seller
-    @books = Book.where(user: current_user).order("created_at DESC")
 
+    @books = Book.where(user: current_user).paginate(page: params[:page], per_page: 4).order("created_at DESC")
   end
 
   def index
