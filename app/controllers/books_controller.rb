@@ -5,6 +5,13 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
+
+
+  def seller
+    @books = Book.where(user: current_user).order("created_at DESC")
+
+  end
+
   def index
     #coalculates the number of pages and displays onl
     @books = Book.paginate(page: params[:page], per_page: 12).order("title")

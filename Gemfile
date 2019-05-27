@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 #gem 'bcrypt', '~> 3.1.7'
 #gem 'kaminari'
-gem 'fagaro'
+
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 # Use ActiveStorage variant
  gem 'mini_magick', '~> 4.8'
@@ -41,7 +41,7 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.7'
  gem 'redis', '~> 4.1', '>= 4.1.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'faker', '~> 1.6.6'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 # Use SCSS for stylesheets
