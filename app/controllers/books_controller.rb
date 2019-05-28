@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
+  before_action :admin_user,     only: :destroy
   # GET /books
   # GET /books.json
 
