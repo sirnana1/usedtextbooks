@@ -1,6 +1,16 @@
 <% provide(:title, "Book Listings") %>
-<h1>Book Listings </h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welome to USED TEXTBOOKS</h1>
+    <p class="lead">Welome to used textbooks. This site gives College students the
+    opportunity to sell or trade textbooks upon completion
+    of the course or class.
+	</p>
+  </div>
+</div>
+
 <hr>
+<h2>Book Listings </h2>
 <div class="center">
   <div id="books-index">
     <div class="row">
@@ -26,7 +36,7 @@
 
   </div>
   </div>
-
+<!-- Checking if the user have signed in -->
 <% if user_signed_in?%>
 <%= link_to 'New Book', new_book_path %>
 <% end %>

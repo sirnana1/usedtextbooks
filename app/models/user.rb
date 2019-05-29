@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
 
   def admin_user
-  
+
   end
 
 end
