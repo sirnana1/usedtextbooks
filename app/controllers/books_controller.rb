@@ -3,14 +3,13 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
-  before_action :admin_user,     only: :destroy
+  #before_action :admin_user,     only: :destroy
   # GET /books
   # GET /books.json
 
 
   def seller
-
-    @books = Book.where(user: current_user).paginate(page: params[:page], per_page: 4).order("created_at DESC")
+    @books = Book.where(user: current_user).order("created_at DESC")
   end
 
   def index
@@ -22,8 +21,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @book = Book.find(params[:id])
-    @books = Book.all.order("title")
+    # @book = Book.find(params[:id])
+    # @books = Book.all.order("title")
   end
 
   # GET /books/new
@@ -91,4 +90,5 @@ class BooksController < ApplicationController
        redirect_to root_url, alert: " Sorry you do not have the right privileges. "
    end
  end
+
 end

@@ -9,34 +9,26 @@
   </div>
 </div>
 
-<hr>
-<h2>Book Listings </h2>
 <div class="center">
-  <div id="books-index">
-    <div class="row">
-        <% @books.each do |book| %>
-          <div class="col-md-2">
-            <%=link_to (image_tag 'http://placehold.it/150x200', class: 'thumbnail'),book %>
-            <div class="caption">
-              <h5><%=link_to book.title ,book %></h5>
-            <%=(number_to_currency(book.price)) %>
-            <p><%= "Sold by #{book.user.name}"%></p>
-            <%= link_to 'buy now', new_book_order_path(book.id), class: "btn btn-primary"%>
-              <hr>
-              <br>
-              </div>
-            </div>
-          <% end %>
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%=link_to (image_tag 'http://placehold.it/250x250', class: 'thumbnail'),book %>
+          <div class="card">
+            <h4><%= book.title %></h4>
+            <h4><%= number_to_currency(book.price) %></h4>
+            <%= "Sold by #{book.user.name}" %>
+            <p><%= link_to 'buy now', new_book_order_path(book.id), class: "btn btn-primary"%></p>
+          </div>
+        </div>
       </div>
-      <nav aria-label="arial">
-  <ul class="pager">
-      <%= will_paginate @books%>
-  </ul>
-</nav>
+    <% end %>
+  </div>
+</div>
+<%= will_paginate @books%>
+<br>
 
-  </div>
-  </div>
-<!-- Checking if the user have signed in -->
-<% if user_signed_in?%>
-<%= link_to 'New Book', new_book_path %>
+<% if user_signed_in? %>
+  <%= link_to "New Book", new_book_path, class: "btn btn-primary", data: { no_turbolink: true } %>
 <% end %>

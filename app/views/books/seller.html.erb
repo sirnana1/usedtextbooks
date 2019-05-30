@@ -5,11 +5,7 @@
 <% if (user_signed_in?) %>
 <%= link_to 'New Book', new_book_path, class: "btn btn-link" %>
 <%end%>
-<nav aria-label="arial">
-<ul class="pager">
-<%= will_paginate @books%>
-</ul>
-</nav>
+
 <table class="table table-striped table-bordered">
   <tr>
  <th class="center">Image</th>
@@ -39,7 +35,6 @@
     </ul>
     </div>
       </td>
-
   </tr>
 <% end %>
 
