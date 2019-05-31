@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.delete.all
 
 User.create!(name:  "admin",
              email: "example@.muhlenberg.edu",
@@ -17,12 +16,33 @@ User.create!(name:  "admin",
 #Category.create!([{name:'Computer Science'},{name:'mathematics'},{name:'Biology'},{name:'Arts'},{name:'History'}])
 
 
+# 20.times do |index|
+#   Book.create!(title: Faker::Book.title, #=> "The Odd Sister"
+#                       subject: "computer Science",
+#                       author: "John",
+#                       description: Faker::Lorem.sentence(1, false, 0).chop,
+#                       publisher: "Pearson",
+#                       isbn: "9780803612259",
+#                       year: "2013",
+#                       price: "20.99"
+#                     )
+#
+# end
+#
+# p "Created #{Book.count} books"
 
-
-
- Book.create!(title: "Photoshop Elements 9: The Missing Manual",subject: "Computer Science", author: "Barbara Brundage",description: "It is about editing photos", publisher: "Pogue Press",isbn: "9781449389673", year: 2010, price: 56.29)
-# Book.create!(title: 'Where Good Ideas Come From: The Natural History of Innovation',subject: 'Computer Science', author: 'Steven Johnson',description: 'I love this book', publisher: 'Riverhead Hardcover',isbn: '9781594487712', year: 2010, price: 97.98)
-# Book.create!(title: 'The Digital Photography Book',subject: 'Computer Science', author: 'Scott Kelby', description: 'Great book', publisher: 'Peachpit Press', isbn: '9780321474049', year: 2006, price: 66.52)
+# Faker::Book.title #=> "The Odd Sister"
+#
+# # Random Author
+# Faker::Book.author #=> "Alysha Olsen"
+#
+# # Random Publisher
+# Faker::Book.publisher #=> "Opus Reader"
+#
+#
+# Book.create!(title: "Photoshop Elements 9: The Missing Manual",subject: "Computer Science", author: "Barbara Brundage",description: "It is about editing photos", publisher: "Pogue Press",isbn: "9781449389673", year: 2010, price: 56.29)
+# # Book.create!(title: 'Where Good Ideas Come From: The Natural History of Innovation',subject: 'Computer Science', author: 'Steven Johnson',description: 'I love this book', publisher: 'Riverhead Hardcover',isbn: '9781594487712', year: 2010, price: 97.98)
+# # Book.create!(title: 'The Digital Photography Book',subject: 'Computer Science', author: 'Scott Kelby', description: 'Great book', publisher: 'Peachpit Press', isbn: '9780321474049', year: 2006, price: 66.52)
 # Book.create!(title: 'The Great Gatsby', subject: 'Computer Science', author: 'F. Scott Fitzgerald', description: 'A paperback and it is about a friend', publisher: 'Scribner', isbn: '978684801520' , year: 1995, price: 90.71)
 # # Book.create(isbn: '978-0803612259', title: 'Davis s Drug Guide For Nurses (book With Cd-rom) And Mednotes: Nurse s Pocket Pharmacology Guide', authors: 'Judith Hopfer Deglin, April Hazard Vallerand', publisher: 'F. A. Davis Company', year: 2004, inventory: 15, price: 81.38, format: 'hardcover', keywords: 'information technology', subject: 'Computer Science')
 # Book.create(isbn: '978-1111529024', title: 'Microsoft Office 2007: Introductory Concepts and Techniques, Premium Video Edition (Book Only)', authors: 'Gary B. Shelly, Thomas J. Cashman, Misty E. Vermaat', publisher: 'Course Technology', year: 2010, inventory: 1, price: 84.67, format: 'paperback', keywords: 'information technology', subject: 'Computer Science')
