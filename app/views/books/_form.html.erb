@@ -2,8 +2,9 @@
 <div class="jumbotron">
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-
+<!-- LOOP through the book model -->
 <%= form_with(model: book, local: true) do |form| %>
+ <!-- checks for errors in the form-->
   <% if book.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger">
@@ -17,13 +18,13 @@
       </ul>
     </div>
   <% end %>
-
+    <!-- form input fields to fill out-->
+    <!-- title of the book -->
     <%= form.label :title  %>
     <%= form.text_field :title,class:"form-control" %>
 
     <%= form.label :subject  %>
     <%= form.text_field :subject, class:"form-control"%>
-
 
     <%= form.label :author %>
     <%= form.text_field :author,class:"form-control" %>
@@ -32,16 +33,11 @@
     <%= form.label :description %>
     <%= form.text_area :description ,class:"form-control"%>
 
-
     <%= form.label :publisher %>
     <%= form.text_field :publisher,class:"form-control" %>
 
-
-
     <%= form.label :isbn %>
     <%= form.text_field :isbn, placeholder: "eg.12345678910",class:"form-control" %>
-
-
 
     <%= form.label :year %>
     <%= form.number_field :year, placeholder:"eg.2000",class:"form-control" %>
@@ -50,7 +46,6 @@
 
     <%= form.label :price %>
     <%= form.text_field :price, placeholder: "no -1",class:"form-control" %>
-
 
 
     <%= form.submit class: "btn btn-success" %>

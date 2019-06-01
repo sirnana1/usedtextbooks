@@ -14,16 +14,16 @@ class BooksController < ApplicationController
 
   def index
     #coalculates the number of pages and displays onl
-    @books = Book.paginate(page: params[:page], per_page: 12).order("title")
+    @books = Book.paginate(page: params[:page], per_page: 4).order("title")
 
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
-    # @book = Book.find(params[:id])
-    # @books = Book.all.order("title")
-  end
+  #    @book = Book.find(params[:id])
+  #    @books = Book.all.order("title")
+   end
 
   # GET /books/new
   def new
@@ -90,5 +90,4 @@ class BooksController < ApplicationController
        redirect_to root_url, alert: " Sorry you do not have the right privileges. "
    end
  end
-
 end

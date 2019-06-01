@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  # relational associations
   belongs_to :user
   has_many :orders
 

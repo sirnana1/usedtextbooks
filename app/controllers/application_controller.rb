@@ -5,7 +5,8 @@ before_action :authenticate_user!
 
 before_action :configure_permitted_parameters, if: :devise_controller?
 
-
+#these are the permit parameters for devise to prevent Hackers getting
+#into user system in the inputs fields.
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])

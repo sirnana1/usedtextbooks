@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'books#index'
-  
+  resource 'orders'
   devise_for :users
 
   get 'seller' => "books#seller"

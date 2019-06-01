@@ -14,8 +14,8 @@ class User < ApplicationRecord
   has_many :purchases, class_name: "Order", foreign_key: "buyer_id"
 
 
-  def admin_user
-
-  end
+  # def admin_user
+  #
+  # end
 
 end
