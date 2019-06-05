@@ -1,3 +1,9 @@
+#   Nana Asiedu-Ansah
+#   Muhlenberg College
+#   CSI 370
+#   Spring 2019 CUE
+#
+
 class ApplicationController < ActionController::Base
 protect_from_forgery with: :exception
 #checks if a user have permmision to continue.

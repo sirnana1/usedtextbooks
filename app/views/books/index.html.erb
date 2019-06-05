@@ -1,3 +1,8 @@
+<!--   Nana Asiedu-Ansah
+      Muhlenberg College
+      CSI 370
+      Spring 2019 CUE
+-->
 <% provide(:title, "Book Listings") %>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -11,13 +16,18 @@
 
 <div class="center">
   <div class="row">
+    <!-- loop to go through the books -->
     <% @books.each do |book| %>
       <div class="col-md-3">
         <div class="thumbnail">
+          <!-- image placeholder -->
           <%=link_to (image_tag 'http://placehold.it/250x250', class: 'thumbnail'),book %>
           <div class="card">
+            <!-- book title -->
             <h4><%= book.title %></h4>
+            <!-- book price -->
             <h4><%= number_to_currency(book.price) %></h4>
+              <!-- seller name -->
             <%= "Sold by #{book.user.name}" %>
             <p><%= link_to 'buy now', new_book_order_path(book.id), class: "btn btn-primary"%></p>
           </div>
@@ -26,6 +36,7 @@
     <% end %>
   </div>
 </div>
+<!-- coalculates and allows 4 books to a page-->
 <%= will_paginate @books%>
 <br>
 

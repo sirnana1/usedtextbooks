@@ -1,3 +1,9 @@
+
+#   Nana Asiedu-Ansah
+#   Muhlenberg College
+#   CSI 370
+#   Spring 2019 CUE
+#
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 

@@ -1,3 +1,9 @@
+#   Nana Asiedu-Ansah
+#   Muhlenberg College
+#   CSI 370
+#   Spring 2019 CUE
+#
+
 # frozen_string_literal: true
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]

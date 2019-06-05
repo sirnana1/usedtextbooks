@@ -1,4 +1,8 @@
-
+#   Nana Asiedu-Ansah
+#   Muhlenberg College
+#   CSI 370
+#   Spring 2019 CUE
+#
 module DeviseHelper
   def devise_error_messages!
     return '' if resource.errors.empty?

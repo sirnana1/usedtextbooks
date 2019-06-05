@@ -1,7 +1,13 @@
+<!--   Nana Asiedu-Ansah
+      Muhlenberg College
+      CSI 370
+      Spring 2019 CUE
+-->
 <% provide(:title, "Book Information") %>
 <h1>Book Informatiom</h1>
   <div class="row no-gutters">
     <div class="col-md-5">
+      <!--image placeholder -->
       <%=image_tag 'http://placehold.it/350x400', class: 'medium'%>
     </div>
     <div class="col-md-7">
@@ -10,18 +16,20 @@
 
    <tr>
      <th scope="row"> <strong>Title:</strong></th>
-
+      <!--book title -->
      <td><%= @book.title %></td>
    </tr>
       <tr>
             <th scope="row"> <strong>Subject:</strong>
             </th>
+            <!--the subject of the book -->
               <td> <%= @book.subject%></td>
             </tr>
 
             <tr>
               <th scope="row"><strong>Author:</strong>
             </th>
+              <!--book's author's name -->
               <td> <%= @book.author %></td>
             </tr>
 

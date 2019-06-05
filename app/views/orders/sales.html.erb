@@ -1,4 +1,8 @@
-
+<!--   Nana Asiedu-Ansah
+      Muhlenberg College
+      CSI 370
+      Spring 2019 CUE
+-->
 <div class="center">
    <h2>Seller Sales History </h2>
 </div>
@@ -12,13 +16,20 @@
  <th class="center">Date Sold</th>
 
   </tr>
+  <!-- loop through orders
+  -->
   <% @orders.each do |order| %>
 
   <tr>
+    <!--image placeholder -->
     <td><%=image_tag 'http://placehold.it/150x200', class: 'thumbnail' %></td>
+        <!--ordered book title -->
     <td class="center"><%= order.book.title %></td>
+        <!-- the price -->
     <td class="center"><%= number_to_currency(order.book.price) %></td>
+        <!--buyer's name -->
     <td class="center"><%= order.buyer.name %></td>
+        <!--time order was created -->
     <td class="center"><%= order.created_at.strftime("%B %-d, %Y") %></td>
     </tr>
     <%end%>

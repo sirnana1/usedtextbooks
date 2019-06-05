@@ -1,5 +1,13 @@
+#   Nana Asiedu-Ansah
+#   Muhlenberg College
+#   CSI 370
+#   Spring 2019 CUE
+#
+
 class BooksController < ApplicationController
+  #These actions are only available to users
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  #These action are available to authenticate users
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
@@ -7,13 +15,14 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
 
-
+  # Where the current user is the seller and it is sorted in desending order
   def seller
     @books = Book.where(user: current_user).order("created_at DESC")
   end
 
   def index
-    #coalculates the number of pages and displays onl
+    #calculates the number of pages and displays only 4 pages
+    # and sorted by title
     @books = Book.paginate(page: params[:page], per_page: 4).order("title")
 
   end
@@ -25,7 +34,7 @@ class BooksController < ApplicationController
   #    @books = Book.all.order("title")
    end
 
-  # GET /books/new
+  # GET /books/new creating a new book
   def new
     @book = Book.new
   end

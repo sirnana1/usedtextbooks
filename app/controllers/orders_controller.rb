@@ -1,18 +1,25 @@
+#   Nana Asiedu-Ansah
+#   Muhlenberg College
+#   CSI 370
+#   Spring 2019 CUE
+#
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  # Track the seller sales and sorted by the time it was created
   def sales
     @orders = Order.all.where(seller: current_user).order("created_at DESC")
   end
-
+  # Track the current user who is a buyer's purchases and sorted by time it
+  # was created.
   def purchases
     @orders = Order.all.where(buyer: current_user).order("created_at DESC")
   end
 
   # GET /orders
-  # GET /orders.json
+  # GET /orders.json. All the order
   def index
+    # diplaye all orders
     @orders = Order.all
   end
 
@@ -23,7 +30,9 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    #new order
     @order = Order.new
+    # All the parameters a book instance has
     @book = Book.find(params[:book_id])
   end
 
@@ -34,10 +43,12 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    #creates a new order instance with the parameters
     @order = Order.new(order_params)
     @book = Book.find(params[:book_id])
+    # assigning a user to a seller
     @seller = @book.user
-
+    #assigning book id to order book_id
     @order.book_id = @book.id
     @order.buyer_id = current_user.id
     @order.seller_id = @seller.id
